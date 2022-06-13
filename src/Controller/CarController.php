@@ -19,7 +19,7 @@ class CarController extends AbstractController
         return new Response('Saved new product with id '.$cars[0]->getId());
     }
 
-
+    
     #[Route('car/addcar', name:'add_car', methods: 'GET')]
     public function addCars(CarsRepository $carsRepository): Response
     {
