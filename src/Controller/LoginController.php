@@ -21,20 +21,6 @@ class LoginController extends AbstractController
         ]);
     }
 
-    #[Route('/loginSuccess', name: 'loginSuccess')]
-    public function loginSuccess()
-    {
-        if($this->getUser()){
-            $roles = $this->getUser()->getRoles();
-            foreach ($roles as $role){
-                if($role == 'ROLE_ADMIN'){
-                    return $this->redirectToRoute('admin');
-                }
-            }
-            return $this->redirectToRoute('profile');
-        }
-    }
-
     #[Route('/logout' ,name: 'app_logout')]
     public function logout()
     {
