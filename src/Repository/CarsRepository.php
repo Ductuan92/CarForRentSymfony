@@ -17,6 +17,8 @@ use Exception;
  */
 class CarsRepository extends ServiceEntityRepository
 {
+    private const TABLE_ALIAS = 'b';
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Cars::class);
@@ -61,28 +63,13 @@ class CarsRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return Cars[] Returns an array of Cars objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('c')
-//            ->andWhere('c.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('c.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?Cars
-//    {
-//        return $this->createQueryBuilder('c')
-//            ->andWhere('c.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    public function findAllQuery($param): array
+    {
+        $qb = $this->createQueryBuilder(static::TABLE_ALIAS);
+        foreach ($param as $item => $value) {
+            $qb->where(static::TABLE_ALIAS . ".${item} = :item")->setParameter('item', $value);
+        }
+        $query = $qb->getQuery();
+        return $query->execute();
+    }
 }

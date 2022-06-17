@@ -3,27 +3,33 @@
 namespace App\Transformer;
 
 use App\Entity\Cars;
+use App\Entity\User;
 
 class CarsTransformer
 {
-    public function arrayToObjectCar(array $carArray): Cars
+    public function arrayToObjectCar(array $carArray, User $user): Cars
     {
         $car = new Cars();
 
-        if (!empty($carArray['brand'])) {
-            $car->setBrand($carArray['brand']);
-        }
+        $car->setBrand($carArray['brand']);
+        $car->setUser($user);
+        $car->setPrice($carArray['price']);
+        $car->setSeats($carArray['seats']);
 
         if (!empty($carArray['image'])) {
             $car->setImage($carArray['image']);
         }
 
-        if (!empty($carArray['price'])) {
-            $car->setPrice($carArray['price']);
-        }
-
         if (!empty($carArray['color'])) {
             $car->setColor($carArray['color']);
+        }
+
+        if (!empty($carArray['description'])) {
+            $car->setDescription($carArray['description']);
+        }
+
+        if (!empty($carArray['year'])) {
+            $car->setYear($carArray['year']);
         }
 
         return $car;
@@ -37,6 +43,22 @@ class CarsTransformer
             $car->getColor(),
             $car->getPrice(),
             $car->getImage(),
+            $car->getUser(),
+            $car->getDescription(),
+            $car->getSeats(),
+            $car->getYear(),
+            $car->getCreatedAt(),
         ];
+    }
+
+    public function queryToObject($param): Cars
+    {
+        $car = new Cars();
+        foreach ($param as $item => $value) {
+            $action = 'set' . ucfirst($item);
+            $car->{$action}($value);
+        }
+
+        return $car;
     }
 }

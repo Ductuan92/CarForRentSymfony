@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 trait ResponseTraits
 {
-    public function success($data)
+    public function success($data = [])
     {
         $dataReturn = [
             'status' => 'success',
