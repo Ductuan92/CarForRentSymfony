@@ -3,6 +3,9 @@
 namespace App\Entity;
 
 use App\Repository\CarsRepository;
+use DateTimeImmutable;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CarsRepository::class)]
@@ -13,6 +16,7 @@ class Cars
     #[ORM\Column(type: 'integer')]
     private $id;
 
+    #[Assert\NotBlank]
     #[ORM\Column(type: 'string', length: 255)]
     private $brand;
 
@@ -23,6 +27,7 @@ class Cars
     private $image;
 
     #[ORM\Column(type: 'float')]
+    #[Assert\notBlank]
     private $price;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
@@ -39,7 +44,17 @@ class Cars
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'car')]
     #[ORM\JoinColumn(nullable: false)]
-    private $userId;
+    private $user;
+
+    #[ORM\OneToMany(mappedBy: 'car', targetEntity: Rent::class, orphanRemoval: true)]
+    private $rents;
+
+    public function __construct()
+    {
+        $this->createdAt = new DateTimeImmutable();
+        $this->rents = new ArrayCollection();
+    }
+
 
     public function getId(): ?int
     {
@@ -142,14 +157,44 @@ class Cars
         return $this;
     }
 
-    public function getUserId(): ?User
+    public function getUser(): ?User
     {
-        return $this->userId;
+        return $this->user;
     }
 
-    public function setUserId(?User $userId): self
+    public function setUser(?User $user): self
     {
-        $this->userId = $userId;
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Rent>
+     */
+    public function getRents(): Collection
+    {
+        return $this->rents;
+    }
+
+    public function addRent(Rent $rent): self
+    {
+        if (!$this->rents->contains($rent)) {
+            $this->rents[] = $rent;
+            $rent->setCar($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRent(Rent $rent): self
+    {
+        if ($this->rents->removeElement($rent)) {
+            // set the owning side to null (unless already changed)
+            if ($rent->getCar() === $this) {
+                $rent->setCar(null);
+            }
+        }
 
         return $this;
     }

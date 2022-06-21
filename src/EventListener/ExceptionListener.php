@@ -13,25 +13,14 @@ class ExceptionListener
 
     public function onKernelException(ExceptionEvent $event)
     {
-        // You get the exception object from the received event
         $exception = $event->getThrowable();
-//        $message = sprintf(
-//            'My Error says: %s with code: %s',
-//            $exception->getMessage(),
-//            $exception->getCode()
-//        );
-        $response = new Response();
-//        $response->setContent($message);
-
 
         if ($exception instanceof HttpExceptionInterface) {
-            $response->setStatusCode($exception->getStatusCode());
-            $response->headers->replace($exception->getHeaders());
-//        } elseif {
-//            $response->setStatusCode(Response::HTTP_INTERNAL_SERVER_ERROR);
+            $response = $this->error($exception->getMessage(), $exception->getStatusCode());
         } else {
-            $response = $this->error([$exception->getMessage()], $exception->getCode());
+            $response = $this->error($exception->getMessage(), Response::HTTP_INTERNAL_SERVER_ERROR);
         }
+
         $event->setResponse($response);
     }
 }

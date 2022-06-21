@@ -17,6 +17,8 @@ use Exception;
  */
 class CarsRepository extends ServiceEntityRepository
 {
+    private const TABLE_ALIAS = 'b';
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Cars::class);
@@ -42,47 +44,26 @@ class CarsRepository extends ServiceEntityRepository
         }
     }
 
-    public function update(Cars $entity, Cars $carUpdate, bool $flush = false): void
+    public function update(Cars $entity, array $carUpdate, bool $flush = false): void
     {
-        if (!empty($carUpdate->getBrand())) {
-            $entity->setBrand($carUpdate->getBrand());
+        foreach ($carUpdate as $item => $value) {
+            $action = 'set' . ucfirst($item);
+            $entity->{$action}($value);
         }
-        if (!empty($carUpdate->getColor())) {
-            $entity->setColor($carUpdate->getColor());
-        }
-        if (!empty($carUpdate->getPrice())) {
-            $entity->setPrice($carUpdate->getPrice());
-        }
-        if (!empty($carUpdate->getImage())) {
-            $entity->setImage($carUpdate->getImage());
-        }
+
         if ($flush) {
             $this->getEntityManager()->flush();
         }
     }
 
-//    /**
-//     * @return Cars[] Returns an array of Cars objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('c')
-//            ->andWhere('c.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('c.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    public function findAllQuery($param): array
+    {
+        $qb = $this->createQueryBuilder(static::TABLE_ALIAS);
+        foreach ($param as $item => $value) {
+            $qb->where(static::TABLE_ALIAS . ".${item} = :item")->setParameter('item', $value);
+        }
+        $query = $qb->getQuery();
 
-//    public function findOneBySomeField($value): ?Cars
-//    {
-//        return $this->createQueryBuilder('c')
-//            ->andWhere('c.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+        return $query->execute();
+    }
 }
