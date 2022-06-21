@@ -3,10 +3,14 @@
 namespace App\Service;
 
 use App\Entity\Cars;
+use App\Entity\User;
 use App\Repository\CarsRepository;
+use App\Traits\FindByTraits;
 
-class CarService
+class CarsService
 {
+    use FindByTraits;
+
     private CarsRepository $carsRepository;
 
     /**
@@ -21,5 +25,12 @@ class CarService
     public function addCar(Cars $car)
     {
         $this->carsRepository->add($car, true);
+    }
+
+    public function listCars($param): array
+    {
+        [$field, $orderBy, $limit] = $this->getParamForFindBy($param);
+
+        return $this->carsRepository->findBy($field, $orderBy, $limit);
     }
 }

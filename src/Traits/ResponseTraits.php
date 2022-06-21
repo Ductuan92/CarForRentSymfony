@@ -12,6 +12,7 @@ trait ResponseTraits
             'status' => 'success',
             'data' => $data,
         ];
+
         return new JsonResponse($dataReturn, 200);
     }
 
@@ -21,6 +22,7 @@ trait ResponseTraits
             'status' => 'error',
             'data' => $data,
         ];
+
         return new JsonResponse($dataReturn, $statusCode);
     }
 }

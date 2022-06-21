@@ -39,6 +39,17 @@ class RentRepository extends ServiceEntityRepository
         }
     }
 
+    public function update($entity, $rentUpdate, bool $flush = false): void
+    {
+        foreach ($rentUpdate as $item => $value) {
+            $action = 'set' . ucfirst($item);
+            $entity->{$action}($value);
+        }
+
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
+    }
 //    /**
 //     * @return Rent[] Returns an array of Rent objects
 //     */

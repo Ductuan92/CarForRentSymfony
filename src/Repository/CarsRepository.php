@@ -44,20 +44,13 @@ class CarsRepository extends ServiceEntityRepository
         }
     }
 
-    public function update(Cars $entity, Cars $carUpdate, bool $flush = false): void
+    public function update(Cars $entity, array $carUpdate, bool $flush = false): void
     {
-        if (!empty($carUpdate->getBrand())) {
-            $entity->setBrand($carUpdate->getBrand());
+        foreach ($carUpdate as $item => $value) {
+            $action = 'set' . ucfirst($item);
+            $entity->{$action}($value);
         }
-        if (!empty($carUpdate->getColor())) {
-            $entity->setColor($carUpdate->getColor());
-        }
-        if (!empty($carUpdate->getPrice())) {
-            $entity->setPrice($carUpdate->getPrice());
-        }
-        if (!empty($carUpdate->getImage())) {
-            $entity->setImage($carUpdate->getImage());
-        }
+
         if ($flush) {
             $this->getEntityManager()->flush();
         }
@@ -70,6 +63,7 @@ class CarsRepository extends ServiceEntityRepository
             $qb->where(static::TABLE_ALIAS . ".${item} = :item")->setParameter('item', $value);
         }
         $query = $qb->getQuery();
+
         return $query->execute();
     }
 }

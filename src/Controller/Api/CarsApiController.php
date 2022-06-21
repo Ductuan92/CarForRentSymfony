@@ -7,7 +7,7 @@ use App\Controller\Constant\SuccessConstant;
 use App\Entity\Cars;
 use App\Repository\CarsRepository;
 use App\Repository\UserRepository;
-use App\Service\CarService;
+use App\Service\CarsService;
 use App\Traits\ResponseTraits;
 use App\Transformer\CarsTransformer;
 use Exception;
@@ -24,13 +24,14 @@ class CarsApiController extends AbstractController
     public function addCar(
         CarsTransformer $carsTransformer,
         Request $request,
-        CarService $carService,
+        CarsService $carService,
         UserRepository $userRepository
     ): Response {
         $param = $request->query->all();
         $user = $userRepository->findOneBy([$this->getUser()->getUserIdentifier()]);
         $car = $carsTransformer->arrayToObjectCar($param, $user);
         $carService->addCar($car);
+
         return $this->success();
     }
 
@@ -38,15 +39,16 @@ class CarsApiController extends AbstractController
     #[Route('/api/cars', 'list_car', methods: 'GET')]
     public function listCars(
         CarsTransformer $carsTransformer,
-        CarsRepository $carsRepository,
+        CarsService $carsService,
         Request $request
     ): Response {
         $param = $request->query->all();
-        $listCars = $carsRepository->findAllQuery($param);
+        $listCars = $carsService->listCars($param);
         $data = [];
         foreach ($listCars as $car) {
-            array_push($data, $carsTransformer->objectToArray($car));
+            $data[] = $carsTransformer->objectToArray($car);
         }
+
         return $this->success($data);
     }
 
@@ -58,10 +60,9 @@ class CarsApiController extends AbstractController
         CarsRepository $carsRepository,
         Request $request
     ): Response {
-        $carsArray = $request->query->all();
-
-        $carUpdate = $carsTransformer->queryToObject($carsArray);
+        $carUpdate = $request->query->all();
         $carsRepository->update($cars, $carUpdate, true);
+
         return $this->success([SuccessConstant::UPDATE_SUCCESS]);
     }
 
@@ -76,6 +77,7 @@ class CarsApiController extends AbstractController
             throw new Exception(ErrorConstant::ERROR_CAR_NOT_EXISTS, 400);
         }
         $carsRepository->remove($cars, true);
+
         return $this->success([SuccessConstant::REMOVE_SUCCESS]);
     }
 }

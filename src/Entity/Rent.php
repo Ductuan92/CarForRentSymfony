@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\RentRepository;
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: RentRepository::class)]
@@ -35,6 +36,15 @@ class Rent
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
     private $updatedAt;
+
+    /**
+     * @param $createdAt
+     */
+    public function __construct()
+    {
+        $this->createdAt = new DateTimeImmutable();
+    }
+
 
     public function getId(): ?int
     {

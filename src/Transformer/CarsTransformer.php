@@ -4,32 +4,18 @@ namespace App\Transformer;
 
 use App\Entity\Cars;
 use App\Entity\User;
+use App\Traits\FindByTraits;
 
 class CarsTransformer
 {
     public function arrayToObjectCar(array $carArray, User $user): Cars
     {
         $car = new Cars();
-
-        $car->setBrand($carArray['brand']);
         $car->setUser($user);
-        $car->setPrice($carArray['price']);
-        $car->setSeats($carArray['seats']);
 
-        if (!empty($carArray['image'])) {
-            $car->setImage($carArray['image']);
-        }
-
-        if (!empty($carArray['color'])) {
-            $car->setColor($carArray['color']);
-        }
-
-        if (!empty($carArray['description'])) {
-            $car->setDescription($carArray['description']);
-        }
-
-        if (!empty($carArray['year'])) {
-            $car->setYear($carArray['year']);
+        foreach ($carArray as $item => $value) {
+            $action = 'set' . ucfirst($item);
+            $car->{$action}($value);
         }
 
         return $car;
@@ -51,9 +37,10 @@ class CarsTransformer
         ];
     }
 
-    public function queryToObject($param): Cars
+    public function arrayToObject($param): Cars
     {
         $car = new Cars();
+
         foreach ($param as $item => $value) {
             $action = 'set' . ucfirst($item);
             $car->{$action}($value);
