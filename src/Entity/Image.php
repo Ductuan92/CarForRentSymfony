@@ -20,6 +20,9 @@ class Image
     #[ORM\Column(type: 'datetime_immutable')]
     private $createdAt;
 
+    #[ORM\OneToOne(mappedBy: 'thumbnail', targetEntity: Cars::class, cascade: ['persist', 'remove'])]
+    private $cars;
+
     /**
      * @param $createdAt
      */
@@ -54,6 +57,28 @@ class Image
     public function setCreatedAt(\DateTimeImmutable $createdAt): self
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getCars(): ?Cars
+    {
+        return $this->cars;
+    }
+
+    public function setCars(?Cars $cars): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($cars === null && $this->cars !== null) {
+            $this->cars->setThumbnail(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($cars !== null && $cars->getThumbnail() !== $this) {
+            $cars->setThumbnail($this);
+        }
+
+        $this->cars = $cars;
 
         return $this;
     }

@@ -3,6 +3,7 @@
 namespace App\Traits;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 trait ResponseTraits
 {
@@ -13,7 +14,7 @@ trait ResponseTraits
             'data' => $data,
         ];
 
-        return new JsonResponse($dataReturn, 200);
+        return new JsonResponse($dataReturn, Response::HTTP_OK);
     }
 
     public function error($data, $statusCode)

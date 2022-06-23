@@ -29,8 +29,8 @@ class CarsService
 
     public function listCars($param): array
     {
-        [$field, $orderBy, $limit] = $this->getParamForFindBy($param);
+        [$field, $groupBy, $orderBy, $limit] = $this->getParamForFindBy($param);
 
-        return $this->carsRepository->findBy($field, $orderBy, $limit);
+        return $this->carsRepository->findByQuery($field, $groupBy, $orderBy, $limit);
     }
 }

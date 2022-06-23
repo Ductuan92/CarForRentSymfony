@@ -3,10 +3,12 @@
 namespace App\Controller\Api;
 
 use App\Controller\Constant\ErrorConstant;
+use App\Controller\Constant\MessageConstant;
 use App\Controller\Constant\SuccessConstant;
 use App\Entity\Cars;
 use App\Repository\CarsRepository;
 use App\Repository\UserRepository;
+use App\Request\CarsRequest;
 use App\Service\CarsService;
 use App\Traits\ResponseTraits;
 use App\Transformer\CarsTransformer;
@@ -15,21 +17,34 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class CarsApiController extends AbstractController
 {
     use ResponseTraits;
 
+    private ValidatorInterface $validator;
+
+    /**
+     * @param ValidatorInterface $validator
+     */
+    public function __construct(ValidatorInterface $validator)
+    {
+        $this->validator = $validator;
+    }
+
     #[Route('/api/cars', 'add_car', methods: 'POST')]
     public function addCar(
-        CarsTransformer $carsTransformer,
         Request $request,
         CarsService $carService,
-        UserRepository $userRepository
+        UserRepository $userRepository,
+        CarsRequest $carRequest,
     ): Response {
         $param = $request->query->all();
-        $user = $userRepository->findOneBy([$this->getUser()->getUserIdentifier()]);
-        $car = $carsTransformer->arrayToObjectCar($param, $user);
+        $userEmail = $this->getUser()->getUserIdentifier();
+        $user = $userRepository->findOneBy([$userEmail]);
+        $car = $carRequest->fromArray($param, $user);
+        $this->validate($car);
         $carService->addCar($car);
 
         return $this->success();
@@ -38,16 +53,14 @@ class CarsApiController extends AbstractController
 
     #[Route('/api/cars', 'list_car', methods: 'GET')]
     public function listCars(
+        CarsRequest $carRequest,
         CarsTransformer $carsTransformer,
         CarsService $carsService,
-        Request $request
+        Request $request,
     ): Response {
         $param = $request->query->all();
         $listCars = $carsService->listCars($param);
-        $data = [];
-        foreach ($listCars as $car) {
-            $data[] = $carsTransformer->objectToArray($car);
-        }
+        $data = $carsTransformer->listToArray($listCars);
 
         return $this->success($data);
     }
@@ -58,12 +71,16 @@ class CarsApiController extends AbstractController
         Cars $cars,
         CarsTransformer $carsTransformer,
         CarsRepository $carsRepository,
-        Request $request
+        Request $request,
+        CarsRequest $carsRequest,
+        ValidatorInterface $validator,
     ): Response {
-        $carUpdate = $request->query->all();
-        $carsRepository->update($cars, $carUpdate, true);
+        $param = $request->query->all();
+        $carUpdate = $carsRequest->fromArray($param);
+        $validator->validate($carUpdate);
+        $carsRepository->update($cars, $param, true);
 
-        return $this->success([SuccessConstant::UPDATE_SUCCESS]);
+        return $this->success([MessageConstant::UPDATE_SUCCESS]);
     }
 
 
@@ -74,10 +91,18 @@ class CarsApiController extends AbstractController
     public function deleteCars(CarsRepository $carsRepository, Cars $cars): Response
     {
         if (empty($cars)) {
-            throw new Exception(ErrorConstant::ERROR_CAR_NOT_EXISTS, 400);
+            throw new Exception(MessageConstant::CAR_NOT_EXISTS_ERROR, 400);
         }
         $carsRepository->remove($cars, true);
 
-        return $this->success([SuccessConstant::REMOVE_SUCCESS]);
+        return $this->success([MessageConstant::REMOVE_SUCCESS]);
+    }
+
+    private function validate($car)
+    {
+        $errors = $this->validator->validate($car);
+        if (!empty($errors)) {
+            throw new Exception(MessageConstant::BAD_REQUEST, Response::HTTP_BAD_REQUEST);
+        }
     }
 }

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /Users/nfqasia/Desktop/BE_project/CarForRentSymfony/src</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="_css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="_css/nv.d3.min.css" rel="stylesheet" type="text/css">
+  <link href="_css/style.css" rel="stylesheet" type="text/css">
+  <link href="_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="index.html">/Users/nfqasia/Desktop/BE_project/CarForRentSymfony/src</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Controller/AdminController.php.html#9">App\Controller\AdminController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/CarsApiController.php.html#22">App\Controller\Api\CarsApiController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/ImageApiController.php.html#12">App\Controller\Api\ImageApiController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/RentsApiController.php.html#18">App\Controller\Api\RentsApiController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/LoginController.php.html#11">App\Controller\LoginController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/ProfileController.php.html#9">App\Controller\ProfileController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#11">App\Entity\Cars</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Image.php.html#9">App\Entity\Image</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Rent.php.html#9">App\Entity\Rent</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#12">App\Entity\User</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EventListener/ExceptionListener.php.html#10">App\EventListener\ExceptionListener</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Manager/FileManager.php.html#11">App\Manager\FileManager</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CarsRepository.php.html#20">App\Repository\CarsRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ImageRepository.php.html#17">App\Repository\ImageRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/RentRepository.php.html#17">App\Repository\RentRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#20">App\Repository\UserRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Request/CarsRequest.php.html#8">App\Request\CarsRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/CarsService.php.html#10">App\Service\CarsService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/ImageService.php.html#9">App\Service\ImageService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/RentService.php.html#10">App\Service\RentService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Transformer/CarsTransformer.php.html#9">App\Transformer\CarsTransformer</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Transformer/RentTransformer.php.html#11">App\Transformer\RentTransformer</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Traits/AutoSetterTraits.php.html#5">App\Traits\AutoSetterTraits</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Traits/FindByQueryTraits.php.html#5">App\Traits\FindByQueryTraits</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Traits/FindByTraits.php.html#5">App\Traits\FindByTraits</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Traits/ResponseTraits.php.html#8">App\Traits\ResponseTraits</a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Entity/Cars.php.html#11">App\Entity\Cars</a></td><td class="text-right">702</td></tr>
+       <tr><td><a href="Entity/User.php.html#12">App\Entity\User</a></td><td class="text-right">600</td></tr>
+       <tr><td><a href="Repository/CarsRepository.php.html#20">App\Repository\CarsRepository</a></td><td class="text-right">272</td></tr>
+       <tr><td><a href="Entity/Image.php.html#9">App\Entity\Image</a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="Controller/Api/CarsApiController.php.html#22">App\Controller\Api\CarsApiController</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="Repository/RentRepository.php.html#17">App\Repository\RentRepository</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#20">App\Repository\UserRepository</a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Transformer/RentTransformer.php.html#11">App\Transformer\RentTransformer</a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Traits/FindByTraits.php.html#5">App\Traits\FindByTraits</a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Controller/Api/RentsApiController.php.html#18">App\Controller\Api\RentsApiController</a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Repository/ImageRepository.php.html#17">App\Repository\ImageRepository</a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Traits/AutoSetterTraits.php.html#5">App\Traits\AutoSetterTraits</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Transformer/CarsTransformer.php.html#9">App\Transformer\CarsTransformer</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="EventListener/ExceptionListener.php.html#10">App\EventListener\ExceptionListener</a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Traits/FindByQueryTraits.php.html#5">App\Traits\FindByQueryTraits</a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Controller/AdminController.php.html#11"><abbr title="App\Controller\AdminController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/CarsApiController.php.html#31"><abbr title="App\Controller\Api\CarsApiController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/CarsApiController.php.html#36"><abbr title="App\Controller\Api\CarsApiController::addCar">addCar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/CarsApiController.php.html#54"><abbr title="App\Controller\Api\CarsApiController::listCars">listCars</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/CarsApiController.php.html#69"><abbr title="App\Controller\Api\CarsApiController::updateCars">updateCars</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/CarsApiController.php.html#90"><abbr title="App\Controller\Api\CarsApiController::deleteCars">deleteCars</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/CarsApiController.php.html#101"><abbr title="App\Controller\Api\CarsApiController::validate">validate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/ImageApiController.php.html#16"><abbr title="App\Controller\Api\ImageApiController::addImage">addImage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/RentsApiController.php.html#22"><abbr title="App\Controller\Api\RentsApiController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/RentsApiController.php.html#39"><abbr title="App\Controller\Api\RentsApiController::createRent">createRent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/RentsApiController.php.html#56"><abbr title="App\Controller\Api\RentsApiController::updateRent">updateRent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/RentsApiController.php.html#66"><abbr title="App\Controller\Api\RentsApiController::deleteRent">deleteRent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/LoginController.php.html#13"><abbr title="App\Controller\LoginController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/LoginController.php.html#26"><abbr title="App\Controller\LoginController::logout">logout</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/ProfileController.php.html#11"><abbr title="App\Controller\ProfileController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#50"><abbr title="App\Entity\Cars::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#57"><abbr title="App\Entity\Cars::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#62"><abbr title="App\Entity\Cars::getBrand">getBrand</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#67"><abbr title="App\Entity\Cars::setBrand">setBrand</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#74"><abbr title="App\Entity\Cars::getColor">getColor</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#79"><abbr title="App\Entity\Cars::setColor">setColor</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#86"><abbr title="App\Entity\Cars::getPrice">getPrice</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#91"><abbr title="App\Entity\Cars::setPrice">setPrice</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#98"><abbr title="App\Entity\Cars::getDescription">getDescription</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#103"><abbr title="App\Entity\Cars::setDescription">setDescription</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#110"><abbr title="App\Entity\Cars::getSeats">getSeats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#115"><abbr title="App\Entity\Cars::setSeats">setSeats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#122"><abbr title="App\Entity\Cars::getYear">getYear</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#127"><abbr title="App\Entity\Cars::setYear">setYear</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#134"><abbr title="App\Entity\Cars::getCreatedAt">getCreatedAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#139"><abbr title="App\Entity\Cars::setCreatedAt">setCreatedAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#146"><abbr title="App\Entity\Cars::getUser">getUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#151"><abbr title="App\Entity\Cars::setUser">setUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#161"><abbr title="App\Entity\Cars::getRents">getRents</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#166"><abbr title="App\Entity\Cars::addRent">addRent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#176"><abbr title="App\Entity\Cars::removeRent">removeRent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#188"><abbr title="App\Entity\Cars::getThumbnail">getThumbnail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#193"><abbr title="App\Entity\Cars::setThumbnail">setThumbnail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Image.php.html#29"><abbr title="App\Entity\Image::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Image.php.html#35"><abbr title="App\Entity\Image::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Image.php.html#40"><abbr title="App\Entity\Image::getPath">getPath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Image.php.html#45"><abbr title="App\Entity\Image::setPath">setPath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Image.php.html#52"><abbr title="App\Entity\Image::getCreatedAt">getCreatedAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Image.php.html#57"><abbr title="App\Entity\Image::setCreatedAt">setCreatedAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Image.php.html#64"><abbr title="App\Entity\Image::getCars">getCars</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Image.php.html#69"><abbr title="App\Entity\Image::setCars">setCars</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Rent.php.html#43"><abbr title="App\Entity\Rent::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Rent.php.html#49"><abbr title="App\Entity\Rent::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Rent.php.html#54"><abbr title="App\Entity\Rent::getUser">getUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Rent.php.html#59"><abbr title="App\Entity\Rent::setUser">setUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Rent.php.html#66"><abbr title="App\Entity\Rent::getCar">getCar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Rent.php.html#71"><abbr title="App\Entity\Rent::setCar">setCar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Rent.php.html#78"><abbr title="App\Entity\Rent::getStatus">getStatus</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Rent.php.html#83"><abbr title="App\Entity\Rent::setStatus">setStatus</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Rent.php.html#90"><abbr title="App\Entity\Rent::getStartDate">getStartDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Rent.php.html#95"><abbr title="App\Entity\Rent::setStartDate">setStartDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Rent.php.html#102"><abbr title="App\Entity\Rent::getEndDate">getEndDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Rent.php.html#107"><abbr title="App\Entity\Rent::setEndDate">setEndDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Rent.php.html#114"><abbr title="App\Entity\Rent::getCreatedAt">getCreatedAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Rent.php.html#119"><abbr title="App\Entity\Rent::setCreatedAt">setCreatedAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Rent.php.html#126"><abbr title="App\Entity\Rent::getUpdatedAt">getUpdatedAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Rent.php.html#131"><abbr title="App\Entity\Rent::setUpdatedAt">setUpdatedAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#38"><abbr title="App\Entity\User::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#44"><abbr title="App\Entity\User::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#49"><abbr title="App\Entity\User::getEmail">getEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#54"><abbr title="App\Entity\User::setEmail">setEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#66"><abbr title="App\Entity\User::getUserIdentifier">getUserIdentifier</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#74"><abbr title="App\Entity\User::getRoles">getRoles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#83"><abbr title="App\Entity\User::setRoles">setRoles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#93"><abbr title="App\Entity\User::getPassword">getPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#98"><abbr title="App\Entity\User::setPassword">setPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#114"><abbr title="App\Entity\User::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#119"><abbr title="App\Entity\User::setName">setName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#129"><abbr title="App\Entity\User::getCar">getCar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#134"><abbr title="App\Entity\User::addCar">addCar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#144"><abbr title="App\Entity\User::removeCar">removeCar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#159"><abbr title="App\Entity\User::getRents">getRents</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#164"><abbr title="App\Entity\User::addRent">addRent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#174"><abbr title="App\Entity\User::removeRent">removeRent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EventListener/ExceptionListener.php.html#14"><abbr title="App\EventListener\ExceptionListener::onKernelException">onKernelException</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Manager/FileManager.php.html#22"><abbr title="App\Manager\FileManager::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Manager/FileManager.php.html#35"><abbr title="App\Manager\FileManager::upLoadFile">upLoadFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Manager/FileManager.php.html#47"><abbr title="App\Manager\FileManager::readFileName">readFileName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Manager/FileManager.php.html#55"><abbr title="App\Manager\FileManager::s3Upload">s3Upload</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Manager/FileManager.php.html#64"><abbr title="App\Manager\FileManager::setClient">setClient</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CarsRepository.php.html#24"><abbr title="App\Repository\CarsRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CarsRepository.php.html#32"><abbr title="App\Repository\CarsRepository::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CarsRepository.php.html#40"><abbr title="App\Repository\CarsRepository::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CarsRepository.php.html#49"><abbr title="App\Repository\CarsRepository::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CarsRepository.php.html#61"><abbr title="App\Repository\CarsRepository::findByQuery">findByQuery</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CarsRepository.php.html#74"><abbr title="App\Repository\CarsRepository::filter">filter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CarsRepository.php.html#91"><abbr title="App\Repository\CarsRepository::extendQuery">extendQuery</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ImageRepository.php.html#19"><abbr title="App\Repository\ImageRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ImageRepository.php.html#24"><abbr title="App\Repository\ImageRepository::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ImageRepository.php.html#33"><abbr title="App\Repository\ImageRepository::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/RentRepository.php.html#19"><abbr title="App\Repository\RentRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/RentRepository.php.html#24"><abbr title="App\Repository\RentRepository::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/RentRepository.php.html#33"><abbr title="App\Repository\RentRepository::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/RentRepository.php.html#42"><abbr title="App\Repository\RentRepository::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#22"><abbr title="App\Repository\UserRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#27"><abbr title="App\Repository\UserRepository::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#36"><abbr title="App\Repository\UserRepository::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#48"><abbr title="App\Repository\UserRepository::upgradePassword">upgradePassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Request/CarsRequest.php.html#46"><abbr title="App\Request\CarsRequest::fromArray">fromArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Request/CarsRequest.php.html#54"><abbr title="App\Request\CarsRequest::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Request/CarsRequest.php.html#59"><abbr title="App\Request\CarsRequest::getBrand">getBrand</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Request/CarsRequest.php.html#64"><abbr title="App\Request\CarsRequest::setBrand">setBrand</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Request/CarsRequest.php.html#71"><abbr title="App\Request\CarsRequest::getColor">getColor</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Request/CarsRequest.php.html#76"><abbr title="App\Request\CarsRequest::setColor">setColor</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Request/CarsRequest.php.html#83"><abbr title="App\Request\CarsRequest::getPrice">getPrice</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Request/CarsRequest.php.html#88"><abbr title="App\Request\CarsRequest::setPrice">setPrice</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Request/CarsRequest.php.html#95"><abbr title="App\Request\CarsRequest::getDescription">getDescription</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Request/CarsRequest.php.html#100"><abbr title="App\Request\CarsRequest::setDescription">setDescription</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Request/CarsRequest.php.html#107"><abbr title="App\Request\CarsRequest::getSeats">getSeats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Request/CarsRequest.php.html#112"><abbr title="App\Request\CarsRequest::setSeats">setSeats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Request/CarsRequest.php.html#119"><abbr title="App\Request\CarsRequest::getYear">getYear</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Request/CarsRequest.php.html#124"><abbr title="App\Request\CarsRequest::setYear">setYear</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Request/CarsRequest.php.html#131"><abbr title="App\Request\CarsRequest::getCreatedAt">getCreatedAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Request/CarsRequest.php.html#136"><abbr title="App\Request\CarsRequest::setCreatedAt">setCreatedAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Request/CarsRequest.php.html#143"><abbr title="App\Request\CarsRequest::getUser">getUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Request/CarsRequest.php.html#148"><abbr title="App\Request\CarsRequest::setUser">setUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/CarsService.php.html#19"><abbr title="App\Service\CarsService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/CarsService.php.html#25"><abbr title="App\Service\CarsService::addCar">addCar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/CarsService.php.html#30"><abbr title="App\Service\CarsService::listCars">listCars</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/ImageService.php.html#17"><abbr title="App\Service\ImageService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/ImageService.php.html#23"><abbr title="App\Service\ImageService::upLoad">upLoad</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/RentService.php.html#20"><abbr title="App\Service\RentService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/RentService.php.html#27"><abbr title="App\Service\RentService::createRent">createRent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/RentService.php.html#33"><abbr title="App\Service\RentService::listRent">listRent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Transformer/CarsTransformer.php.html#11"><abbr title="App\Transformer\CarsTransformer::objectToArray">objectToArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Transformer/CarsTransformer.php.html#27"><abbr title="App\Transformer\CarsTransformer::listToArray">listToArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Transformer/RentTransformer.php.html#13"><abbr title="App\Transformer\RentTransformer::arrayToObject">arrayToObject</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Transformer/RentTransformer.php.html#31"><abbr title="App\Transformer\RentTransformer::objectToArray">objectToArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Traits/AutoSetterTraits.php.html#7"><abbr title="App\Traits\AutoSetterTraits::autoSet">autoSet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Traits/FindByQueryTraits.php.html#7"><abbr title="App\Traits\FindByQueryTraits::findByQuery">findByQuery</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Traits/FindByTraits.php.html#7"><abbr title="App\Traits\FindByTraits::getParamForFindBy">getParamForFindBy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Traits/ResponseTraits.php.html#10"><abbr title="App\Traits\ResponseTraits::success">success</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Traits/ResponseTraits.php.html#20"><abbr title="App\Traits\ResponseTraits::error">error</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Traits/FindByTraits.php.html#7"><abbr title="App\Traits\FindByTraits::getParamForFindBy">getParamForFindBy</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Entity/Image.php.html#69"><abbr title="App\Entity\Image::setCars">setCars</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Transformer/RentTransformer.php.html#13"><abbr title="App\Transformer\RentTransformer::arrayToObject">arrayToObject</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Traits/AutoSetterTraits.php.html#7"><abbr title="App\Traits\AutoSetterTraits::autoSet">autoSet</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#176"><abbr title="App\Entity\Cars::removeRent">removeRent</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Entity/User.php.html#144"><abbr title="App\Entity\User::removeCar">removeCar</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Entity/User.php.html#174"><abbr title="App\Entity\User::removeRent">removeRent</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Repository/CarsRepository.php.html#49"><abbr title="App\Repository\CarsRepository::update">update</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Repository/CarsRepository.php.html#74"><abbr title="App\Repository\CarsRepository::filter">filter</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Repository/CarsRepository.php.html#91"><abbr title="App\Repository\CarsRepository::extendQuery">extendQuery</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Repository/RentRepository.php.html#42"><abbr title="App\Repository\RentRepository::update">update</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/Api/CarsApiController.php.html#90"><abbr title="App\Controller\Api\CarsApiController::deleteCars">deleteCars</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controller/Api/CarsApiController.php.html#101"><abbr title="App\Controller\Api\CarsApiController::validate">validate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controller/Api/RentsApiController.php.html#22"><abbr title="App\Controller\Api\RentsApiController::index">index</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/Cars.php.html#166"><abbr title="App\Entity\Cars::addRent">addRent</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/User.php.html#134"><abbr title="App\Entity\User::addCar">addCar</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/User.php.html#164"><abbr title="App\Entity\User::addRent">addRent</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="EventListener/ExceptionListener.php.html#14"><abbr title="App\EventListener\ExceptionListener::onKernelException">onKernelException</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/CarsRepository.php.html#32"><abbr title="App\Repository\CarsRepository::add">add</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/CarsRepository.php.html#40"><abbr title="App\Repository\CarsRepository::remove">remove</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/CarsRepository.php.html#61"><abbr title="App\Repository\CarsRepository::findByQuery">findByQuery</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/ImageRepository.php.html#24"><abbr title="App\Repository\ImageRepository::add">add</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/ImageRepository.php.html#33"><abbr title="App\Repository\ImageRepository::remove">remove</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/RentRepository.php.html#24"><abbr title="App\Repository\RentRepository::add">add</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/RentRepository.php.html#33"><abbr title="App\Repository\RentRepository::remove">remove</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#27"><abbr title="App\Repository\UserRepository::add">add</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#36"><abbr title="App\Repository\UserRepository::remove">remove</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#48"><abbr title="App\Repository\UserRepository::upgradePassword">upgradePassword</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Transformer/CarsTransformer.php.html#27"><abbr title="App\Transformer\CarsTransformer::listToArray">listToArray</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Traits/FindByQueryTraits.php.html#7"><abbr title="App\Traits\FindByQueryTraits::findByQuery">findByQuery</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 9.2.15</a> using <a href="https://secure.php.net/" target="_top">PHP 8.1.5</a> and <a href="https://phpunit.de/">PHPUnit 9.5.21</a> at Thu Jun 23 8:32:52 UTC 2022.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="_js/jquery.min.js" type="text/javascript"></script>
+  <script src="_js/d3.min.js" type="text/javascript"></script>
+  <script src="_js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([26,0,0,0,0,0,0,0,0,0,0,2], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([138,0,0,0,0,0,0,0,0,0,0,1], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"Controller\/AdminController.php.html#9\">App\\Controller\\AdminController<\/a>"],[0,8,"<a href=\"Controller\/Api\/CarsApiController.php.html#22\">App\\Controller\\Api\\CarsApiController<\/a>"],[0,1,"<a href=\"Controller\/Api\/ImageApiController.php.html#12\">App\\Controller\\Api\\ImageApiController<\/a>"],[0,5,"<a href=\"Controller\/Api\/RentsApiController.php.html#18\">App\\Controller\\Api\\RentsApiController<\/a>"],[100,0,"<a href=\"Controller\/Constant\/MessageConstant.php.html#5\">App\\Controller\\Constant\\MessageConstant<\/a>"],[0,2,"<a href=\"Controller\/LoginController.php.html#11\">App\\Controller\\LoginController<\/a>"],[0,1,"<a href=\"Controller\/ProfileController.php.html#9\">App\\Controller\\ProfileController<\/a>"],[0,26,"<a href=\"Entity\/Cars.php.html#11\">App\\Entity\\Cars<\/a>"],[0,12,"<a href=\"Entity\/Image.php.html#9\">App\\Entity\\Image<\/a>"],[0,16,"<a href=\"Entity\/Rent.php.html#9\">App\\Entity\\Rent<\/a>"],[0,24,"<a href=\"Entity\/User.php.html#12\">App\\Entity\\User<\/a>"],[0,2,"<a href=\"EventListener\/ExceptionListener.php.html#10\">App\\EventListener\\ExceptionListener<\/a>"],[100,0,"<a href=\"Kernel.php.html#8\">App\\Kernel<\/a>"],[0,5,"<a href=\"Manager\/FileManager.php.html#11\">App\\Manager\\FileManager<\/a>"],[0,16,"<a href=\"Repository\/CarsRepository.php.html#20\">App\\Repository\\CarsRepository<\/a>"],[0,5,"<a href=\"Repository\/ImageRepository.php.html#17\">App\\Repository\\ImageRepository<\/a>"],[0,8,"<a href=\"Repository\/RentRepository.php.html#17\">App\\Repository\\RentRepository<\/a>"],[0,7,"<a href=\"Repository\/UserRepository.php.html#20\">App\\Repository\\UserRepository<\/a>"],[0,18,"<a href=\"Request\/CarsRequest.php.html#8\">App\\Request\\CarsRequest<\/a>"],[0,3,"<a href=\"Service\/CarsService.php.html#10\">App\\Service\\CarsService<\/a>"],[0,2,"<a href=\"Service\/ImageService.php.html#9\">App\\Service\\ImageService<\/a>"],[0,3,"<a href=\"Service\/RentService.php.html#10\">App\\Service\\RentService<\/a>"],[0,3,"<a href=\"Transformer\/CarsTransformer.php.html#9\">App\\Transformer\\CarsTransformer<\/a>"],[0,6,"<a href=\"Transformer\/RentTransformer.php.html#11\">App\\Transformer\\RentTransformer<\/a>"],[0,4,"<a href=\"Traits\/AutoSetterTraits.php.html#5\">App\\Traits\\AutoSetterTraits<\/a>"],[0,2,"<a href=\"Traits\/FindByQueryTraits.php.html#5\">App\\Traits\\FindByQueryTraits<\/a>"],[0,6,"<a href=\"Traits\/FindByTraits.php.html#5\">App\\Traits\\FindByTraits<\/a>"],[0,2,"<a href=\"Traits\/ResponseTraits.php.html#8\">App\\Traits\\ResponseTraits<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"Controller\/AdminController.php.html#11\">App\\Controller\\AdminController::index<\/a>"],[0,1,"<a href=\"Controller\/Api\/CarsApiController.php.html#31\">App\\Controller\\Api\\CarsApiController::__construct<\/a>"],[0,1,"<a href=\"Controller\/Api\/CarsApiController.php.html#36\">App\\Controller\\Api\\CarsApiController::addCar<\/a>"],[0,1,"<a href=\"Controller\/Api\/CarsApiController.php.html#54\">App\\Controller\\Api\\CarsApiController::listCars<\/a>"],[0,1,"<a href=\"Controller\/Api\/CarsApiController.php.html#69\">App\\Controller\\Api\\CarsApiController::updateCars<\/a>"],[0,2,"<a href=\"Controller\/Api\/CarsApiController.php.html#90\">App\\Controller\\Api\\CarsApiController::deleteCars<\/a>"],[0,2,"<a href=\"Controller\/Api\/CarsApiController.php.html#101\">App\\Controller\\Api\\CarsApiController::validate<\/a>"],[0,1,"<a href=\"Controller\/Api\/ImageApiController.php.html#16\">App\\Controller\\Api\\ImageApiController::addImage<\/a>"],[0,2,"<a href=\"Controller\/Api\/RentsApiController.php.html#22\">App\\Controller\\Api\\RentsApiController::index<\/a>"],[0,1,"<a href=\"Controller\/Api\/RentsApiController.php.html#39\">App\\Controller\\Api\\RentsApiController::createRent<\/a>"],[0,1,"<a href=\"Controller\/Api\/RentsApiController.php.html#56\">App\\Controller\\Api\\RentsApiController::updateRent<\/a>"],[0,1,"<a href=\"Controller\/Api\/RentsApiController.php.html#66\">App\\Controller\\Api\\RentsApiController::deleteRent<\/a>"],[0,1,"<a href=\"Controller\/LoginController.php.html#13\">App\\Controller\\LoginController::index<\/a>"],[0,1,"<a href=\"Controller\/LoginController.php.html#26\">App\\Controller\\LoginController::logout<\/a>"],[0,1,"<a href=\"Controller\/ProfileController.php.html#11\">App\\Controller\\ProfileController::index<\/a>"],[0,1,"<a href=\"Entity\/Cars.php.html#50\">App\\Entity\\Cars::__construct<\/a>"],[0,1,"<a href=\"Entity\/Cars.php.html#57\">App\\Entity\\Cars::getId<\/a>"],[0,1,"<a href=\"Entity\/Cars.php.html#62\">App\\Entity\\Cars::getBrand<\/a>"],[0,1,"<a href=\"Entity\/Cars.php.html#67\">App\\Entity\\Cars::setBrand<\/a>"],[0,1,"<a href=\"Entity\/Cars.php.html#74\">App\\Entity\\Cars::getColor<\/a>"],[0,1,"<a href=\"Entity\/Cars.php.html#79\">App\\Entity\\Cars::setColor<\/a>"],[0,1,"<a href=\"Entity\/Cars.php.html#86\">App\\Entity\\Cars::getPrice<\/a>"],[0,1,"<a href=\"Entity\/Cars.php.html#91\">App\\Entity\\Cars::setPrice<\/a>"],[0,1,"<a href=\"Entity\/Cars.php.html#98\">App\\Entity\\Cars::getDescription<\/a>"],[0,1,"<a href=\"Entity\/Cars.php.html#103\">App\\Entity\\Cars::setDescription<\/a>"],[0,1,"<a href=\"Entity\/Cars.php.html#110\">App\\Entity\\Cars::getSeats<\/a>"],[0,1,"<a href=\"Entity\/Cars.php.html#115\">App\\Entity\\Cars::setSeats<\/a>"],[0,1,"<a href=\"Entity\/Cars.php.html#122\">App\\Entity\\Cars::getYear<\/a>"],[0,1,"<a href=\"Entity\/Cars.php.html#127\">App\\Entity\\Cars::setYear<\/a>"],[0,1,"<a href=\"Entity\/Cars.php.html#134\">App\\Entity\\Cars::getCreatedAt<\/a>"],[0,1,"<a href=\"Entity\/Cars.php.html#139\">App\\Entity\\Cars::setCreatedAt<\/a>"],[0,1,"<a href=\"Entity\/Cars.php.html#146\">App\\Entity\\Cars::getUser<\/a>"],[0,1,"<a href=\"Entity\/Cars.php.html#151\">App\\Entity\\Cars::setUser<\/a>"],[0,1,"<a href=\"Entity\/Cars.php.html#161\">App\\Entity\\Cars::getRents<\/a>"],[0,2,"<a href=\"Entity\/Cars.php.html#166\">App\\Entity\\Cars::addRent<\/a>"],[0,3,"<a href=\"Entity\/Cars.php.html#176\">App\\Entity\\Cars::removeRent<\/a>"],[0,1,"<a href=\"Entity\/Cars.php.html#188\">App\\Entity\\Cars::getThumbnail<\/a>"],[0,1,"<a href=\"Entity\/Cars.php.html#193\">App\\Entity\\Cars::setThumbnail<\/a>"],[0,1,"<a href=\"Entity\/Image.php.html#29\">App\\Entity\\Image::__construct<\/a>"],[0,1,"<a href=\"Entity\/Image.php.html#35\">App\\Entity\\Image::getId<\/a>"],[0,1,"<a href=\"Entity\/Image.php.html#40\">App\\Entity\\Image::getPath<\/a>"],[0,1,"<a href=\"Entity\/Image.php.html#45\">App\\Entity\\Image::setPath<\/a>"],[0,1,"<a href=\"Entity\/Image.php.html#52\">App\\Entity\\Image::getCreatedAt<\/a>"],[0,1,"<a href=\"Entity\/Image.php.html#57\">App\\Entity\\Image::setCreatedAt<\/a>"],[0,1,"<a href=\"Entity\/Image.php.html#64\">App\\Entity\\Image::getCars<\/a>"],[0,5,"<a href=\"Entity\/Image.php.html#69\">App\\Entity\\Image::setCars<\/a>"],[0,1,"<a href=\"Entity\/Rent.php.html#43\">App\\Entity\\Rent::__construct<\/a>"],[0,1,"<a href=\"Entity\/Rent.php.html#49\">App\\Entity\\Rent::getId<\/a>"],[0,1,"<a href=\"Entity\/Rent.php.html#54\">App\\Entity\\Rent::getUser<\/a>"],[0,1,"<a href=\"Entity\/Rent.php.html#59\">App\\Entity\\Rent::setUser<\/a>"],[0,1,"<a href=\"Entity\/Rent.php.html#66\">App\\Entity\\Rent::getCar<\/a>"],[0,1,"<a href=\"Entity\/Rent.php.html#71\">App\\Entity\\Rent::setCar<\/a>"],[0,1,"<a href=\"Entity\/Rent.php.html#78\">App\\Entity\\Rent::getStatus<\/a>"],[0,1,"<a href=\"Entity\/Rent.php.html#83\">App\\Entity\\Rent::setStatus<\/a>"],[0,1,"<a href=\"Entity\/Rent.php.html#90\">App\\Entity\\Rent::getStartDate<\/a>"],[0,1,"<a href=\"Entity\/Rent.php.html#95\">App\\Entity\\Rent::setStartDate<\/a>"],[0,1,"<a href=\"Entity\/Rent.php.html#102\">App\\Entity\\Rent::getEndDate<\/a>"],[0,1,"<a href=\"Entity\/Rent.php.html#107\">App\\Entity\\Rent::setEndDate<\/a>"],[0,1,"<a href=\"Entity\/Rent.php.html#114\">App\\Entity\\Rent::getCreatedAt<\/a>"],[0,1,"<a href=\"Entity\/Rent.php.html#119\">App\\Entity\\Rent::setCreatedAt<\/a>"],[0,1,"<a href=\"Entity\/Rent.php.html#126\">App\\Entity\\Rent::getUpdatedAt<\/a>"],[0,1,"<a href=\"Entity\/Rent.php.html#131\">App\\Entity\\Rent::setUpdatedAt<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#38\">App\\Entity\\User::__construct<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#44\">App\\Entity\\User::getId<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#49\">App\\Entity\\User::getEmail<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#54\">App\\Entity\\User::setEmail<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#66\">App\\Entity\\User::getUserIdentifier<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#74\">App\\Entity\\User::getRoles<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#83\">App\\Entity\\User::setRoles<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#93\">App\\Entity\\User::getPassword<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#98\">App\\Entity\\User::setPassword<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#108\">App\\Entity\\User::eraseCredentials<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#114\">App\\Entity\\User::getName<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#119\">App\\Entity\\User::setName<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#129\">App\\Entity\\User::getCar<\/a>"],[0,2,"<a href=\"Entity\/User.php.html#134\">App\\Entity\\User::addCar<\/a>"],[0,3,"<a href=\"Entity\/User.php.html#144\">App\\Entity\\User::removeCar<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#159\">App\\Entity\\User::getRents<\/a>"],[0,2,"<a href=\"Entity\/User.php.html#164\">App\\Entity\\User::addRent<\/a>"],[0,3,"<a href=\"Entity\/User.php.html#174\">App\\Entity\\User::removeRent<\/a>"],[0,2,"<a href=\"EventListener\/ExceptionListener.php.html#14\">App\\EventListener\\ExceptionListener::onKernelException<\/a>"],[0,1,"<a href=\"Manager\/FileManager.php.html#22\">App\\Manager\\FileManager::__construct<\/a>"],[0,1,"<a href=\"Manager\/FileManager.php.html#35\">App\\Manager\\FileManager::upLoadFile<\/a>"],[0,1,"<a href=\"Manager\/FileManager.php.html#47\">App\\Manager\\FileManager::readFileName<\/a>"],[0,1,"<a href=\"Manager\/FileManager.php.html#55\">App\\Manager\\FileManager::s3Upload<\/a>"],[0,1,"<a href=\"Manager\/FileManager.php.html#64\">App\\Manager\\FileManager::setClient<\/a>"],[0,1,"<a href=\"Repository\/CarsRepository.php.html#24\">App\\Repository\\CarsRepository::__construct<\/a>"],[0,2,"<a href=\"Repository\/CarsRepository.php.html#32\">App\\Repository\\CarsRepository::add<\/a>"],[0,2,"<a href=\"Repository\/CarsRepository.php.html#40\">App\\Repository\\CarsRepository::remove<\/a>"],[0,3,"<a href=\"Repository\/CarsRepository.php.html#49\">App\\Repository\\CarsRepository::update<\/a>"],[0,2,"<a href=\"Repository\/CarsRepository.php.html#61\">App\\Repository\\CarsRepository::findByQuery<\/a>"],[0,3,"<a href=\"Repository\/CarsRepository.php.html#74\">App\\Repository\\CarsRepository::filter<\/a>"],[0,3,"<a href=\"Repository\/CarsRepository.php.html#91\">App\\Repository\\CarsRepository::extendQuery<\/a>"],[0,1,"<a href=\"Repository\/ImageRepository.php.html#19\">App\\Repository\\ImageRepository::__construct<\/a>"],[0,2,"<a href=\"Repository\/ImageRepository.php.html#24\">App\\Repository\\ImageRepository::add<\/a>"],[0,2,"<a href=\"Repository\/ImageRepository.php.html#33\">App\\Repository\\ImageRepository::remove<\/a>"],[0,1,"<a href=\"Repository\/RentRepository.php.html#19\">App\\Repository\\RentRepository::__construct<\/a>"],[0,2,"<a href=\"Repository\/RentRepository.php.html#24\">App\\Repository\\RentRepository::add<\/a>"],[0,2,"<a href=\"Repository\/RentRepository.php.html#33\">App\\Repository\\RentRepository::remove<\/a>"],[0,3,"<a href=\"Repository\/RentRepository.php.html#42\">App\\Repository\\RentRepository::update<\/a>"],[0,1,"<a href=\"Repository\/UserRepository.php.html#22\">App\\Repository\\UserRepository::__construct<\/a>"],[0,2,"<a href=\"Repository\/UserRepository.php.html#27\">App\\Repository\\UserRepository::add<\/a>"],[0,2,"<a href=\"Repository\/UserRepository.php.html#36\">App\\Repository\\UserRepository::remove<\/a>"],[0,2,"<a href=\"Repository\/UserRepository.php.html#48\">App\\Repository\\UserRepository::upgradePassword<\/a>"],[0,1,"<a href=\"Request\/CarsRequest.php.html#46\">App\\Request\\CarsRequest::fromArray<\/a>"],[0,1,"<a href=\"Request\/CarsRequest.php.html#54\">App\\Request\\CarsRequest::getId<\/a>"],[0,1,"<a href=\"Request\/CarsRequest.php.html#59\">App\\Request\\CarsRequest::getBrand<\/a>"],[0,1,"<a href=\"Request\/CarsRequest.php.html#64\">App\\Request\\CarsRequest::setBrand<\/a>"],[0,1,"<a href=\"Request\/CarsRequest.php.html#71\">App\\Request\\CarsRequest::getColor<\/a>"],[0,1,"<a href=\"Request\/CarsRequest.php.html#76\">App\\Request\\CarsRequest::setColor<\/a>"],[0,1,"<a href=\"Request\/CarsRequest.php.html#83\">App\\Request\\CarsRequest::getPrice<\/a>"],[0,1,"<a href=\"Request\/CarsRequest.php.html#88\">App\\Request\\CarsRequest::setPrice<\/a>"],[0,1,"<a href=\"Request\/CarsRequest.php.html#95\">App\\Request\\CarsRequest::getDescription<\/a>"],[0,1,"<a href=\"Request\/CarsRequest.php.html#100\">App\\Request\\CarsRequest::setDescription<\/a>"],[0,1,"<a href=\"Request\/CarsRequest.php.html#107\">App\\Request\\CarsRequest::getSeats<\/a>"],[0,1,"<a href=\"Request\/CarsRequest.php.html#112\">App\\Request\\CarsRequest::setSeats<\/a>"],[0,1,"<a href=\"Request\/CarsRequest.php.html#119\">App\\Request\\CarsRequest::getYear<\/a>"],[0,1,"<a href=\"Request\/CarsRequest.php.html#124\">App\\Request\\CarsRequest::setYear<\/a>"],[0,1,"<a href=\"Request\/CarsRequest.php.html#131\">App\\Request\\CarsRequest::getCreatedAt<\/a>"],[0,1,"<a href=\"Request\/CarsRequest.php.html#136\">App\\Request\\CarsRequest::setCreatedAt<\/a>"],[0,1,"<a href=\"Request\/CarsRequest.php.html#143\">App\\Request\\CarsRequest::getUser<\/a>"],[0,1,"<a href=\"Request\/CarsRequest.php.html#148\">App\\Request\\CarsRequest::setUser<\/a>"],[0,1,"<a href=\"Service\/CarsService.php.html#19\">App\\Service\\CarsService::__construct<\/a>"],[0,1,"<a href=\"Service\/CarsService.php.html#25\">App\\Service\\CarsService::addCar<\/a>"],[0,1,"<a href=\"Service\/CarsService.php.html#30\">App\\Service\\CarsService::listCars<\/a>"],[0,1,"<a href=\"Service\/ImageService.php.html#17\">App\\Service\\ImageService::__construct<\/a>"],[0,1,"<a href=\"Service\/ImageService.php.html#23\">App\\Service\\ImageService::upLoad<\/a>"],[0,1,"<a href=\"Service\/RentService.php.html#20\">App\\Service\\RentService::__construct<\/a>"],[0,1,"<a href=\"Service\/RentService.php.html#27\">App\\Service\\RentService::createRent<\/a>"],[0,1,"<a href=\"Service\/RentService.php.html#33\">App\\Service\\RentService::listRent<\/a>"],[0,1,"<a href=\"Transformer\/CarsTransformer.php.html#11\">App\\Transformer\\CarsTransformer::objectToArray<\/a>"],[0,2,"<a href=\"Transformer\/CarsTransformer.php.html#27\">App\\Transformer\\CarsTransformer::listToArray<\/a>"],[0,5,"<a href=\"Transformer\/RentTransformer.php.html#13\">App\\Transformer\\RentTransformer::arrayToObject<\/a>"],[0,1,"<a href=\"Transformer\/RentTransformer.php.html#31\">App\\Transformer\\RentTransformer::objectToArray<\/a>"],[0,4,"<a href=\"Traits\/AutoSetterTraits.php.html#7\">App\\Traits\\AutoSetterTraits::autoSet<\/a>"],[0,2,"<a href=\"Traits\/FindByQueryTraits.php.html#7\">App\\Traits\\FindByQueryTraits::findByQuery<\/a>"],[0,6,"<a href=\"Traits\/FindByTraits.php.html#7\">App\\Traits\\FindByTraits::getParamForFindBy<\/a>"],[0,1,"<a href=\"Traits\/ResponseTraits.php.html#10\">App\\Traits\\ResponseTraits::success<\/a>"],[0,1,"<a href=\"Traits\/ResponseTraits.php.html#20\">App\\Traits\\ResponseTraits::error<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

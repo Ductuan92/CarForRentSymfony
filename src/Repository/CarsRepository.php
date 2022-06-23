@@ -4,6 +4,8 @@ namespace App\Repository;
 
 use App\Entity\Cars;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 use Exception;
 
@@ -56,14 +58,44 @@ class CarsRepository extends ServiceEntityRepository
         }
     }
 
-    public function findAllQuery($param): array
+    public function findByQuery($param, $groupBy = null, $oderBy = null, $limit = 10): array
     {
         $qb = $this->createQueryBuilder(static::TABLE_ALIAS);
-        foreach ($param as $item => $value) {
-            $qb->where(static::TABLE_ALIAS . ".${item} = :item")->setParameter('item', $value);
+        if (!empty($param)) {
+            $qb = $this->filter($param, $qb);
         }
+        $this->extendQuery($groupBy, $oderBy, $qb);
+        $qb->setMaxResults($limit);
         $query = $qb->getQuery();
 
         return $query->execute();
+    }
+
+    private function filter($param, QueryBuilder $qb): QueryBuilder
+    {
+        $first  = true;
+        foreach ($param as $item => $value) {
+            if ($first) {
+                $qb->where(static::TABLE_ALIAS . ".${item} = :item")
+                    ->setParameter('item', $value);
+                $first = false;
+            } else {
+                $qb->andWhere(static::TABLE_ALIAS . ".${item} = :item")
+                    ->setParameter('item', $value);
+            }
+        }
+
+        return $qb;
+    }
+
+    private function extendQuery($groupBy, $oderBy, QueryBuilder $qb)
+    {
+        if (!empty($oderBy)) {
+            $sort = self::TABLE_ALIAS . '.' . $oderBy;
+            $qb->orderBy($sort, 'ASC');
+        }
+        if (!empty($groupBy)) {
+            $qb->groupBy($groupBy);
+        }
     }
 }

@@ -16,18 +16,13 @@ class Cars
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[Assert\NotBlank]
     #[ORM\Column(type: 'string', length: 255)]
     private $brand;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $color;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private $image;
-
     #[ORM\Column(type: 'float')]
-    #[Assert\notBlank]
     private $price;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
@@ -48,6 +43,9 @@ class Cars
 
     #[ORM\OneToMany(mappedBy: 'car', targetEntity: Rent::class, orphanRemoval: true)]
     private $rents;
+
+    #[ORM\OneToOne(inversedBy: 'cars', targetEntity: image::class, cascade: ['persist', 'remove'])]
+    private $thumbnail;
 
     public function __construct()
     {
@@ -81,18 +79,6 @@ class Cars
     public function setColor(?string $color): self
     {
         $this->color = $color;
-
-        return $this;
-    }
-
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(?string $image): self
-    {
-        $this->image = $image;
 
         return $this;
     }
@@ -195,6 +181,18 @@ class Cars
                 $rent->setCar(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getThumbnail(): ?image
+    {
+        return $this->thumbnail;
+    }
+
+    public function setThumbnail(?image $thumbnail): self
+    {
+        $this->thumbnail = $thumbnail;
 
         return $this;
     }

@@ -8,19 +8,6 @@ use App\Traits\FindByTraits;
 
 class CarsTransformer
 {
-    public function arrayToObjectCar(array $carArray, User $user): Cars
-    {
-        $car = new Cars();
-        $car->setUser($user);
-
-        foreach ($carArray as $item => $value) {
-            $action = 'set' . ucfirst($item);
-            $car->{$action}($value);
-        }
-
-        return $car;
-    }
-
     public function objectToArray(Cars $car): array
     {
         return [
@@ -28,24 +15,22 @@ class CarsTransformer
             $car->getBrand(),
             $car->getColor(),
             $car->getPrice(),
-            $car->getImage(),
             $car->getUser(),
             $car->getDescription(),
             $car->getSeats(),
             $car->getYear(),
             $car->getCreatedAt(),
+            $car->getThumbnail(),
         ];
     }
 
-    public function arrayToObject($param): Cars
+    public function listToArray($listCars): array
     {
-        $car = new Cars();
-
-        foreach ($param as $item => $value) {
-            $action = 'set' . ucfirst($item);
-            $car->{$action}($value);
+        $data = [];
+        foreach ($listCars as $car) {
+            $data[] = $this->objectToArray($car);
         }
 
-        return $car;
+        return $data;
     }
 }
