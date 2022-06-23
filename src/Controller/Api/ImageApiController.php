@@ -2,7 +2,7 @@
 
 namespace App\Controller\Api;
 
-use App\Controller\Constant\SuccessConstant;
+use App\Service\ImageService;
 use App\Traits\ResponseTraits;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,8 +14,11 @@ class ImageApiController extends AbstractController
     use ResponseTraits;
 
     #[Route('/api/image', name: 'app_api_image', methods: 'POST')]
-    public function index(Request $request): Response
+    public function addImage(Request $request, ImageService $imageService): Response
     {
-        return $this->success();
+        $file = $request->files->get('image');
+        $image = $imageService->upLoad($file);
+
+        return $this->success($image->getId());
     }
 }
